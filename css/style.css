@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  height: 100vh;
+  width: 100%;
+}
+
+button,
+input {
+  /* In some browsers form elements do not inherit font styling */
+  font-family: inherit;
+  font-size: 100%;
+}
