@@ -1,20 +1,17 @@
-html {
-  box-sizing: border-box;
+:root {
+  --primary-red: hsl(0, 100%, 74%);
+  --primary-green: hsl(154, 59%, 51%);
+  --accent-blue: hsl(248, 32%, 49%);
+  --neutral-dark-blue: hsl(249, 10%, 26%);
+  --neutral-grayish-blue: hsl(246, 25%, 77%);
 }
 
 *, 
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-body {
-  font-family: Poppins, sans-serif;
-  font-size: 1rem;
-  height: 100vh;
-  width: 100%;
 }
 
 button,
@@ -22,4 +19,93 @@ input {
   /* In some browsers form elements do not inherit font styling */
   font-family: inherit;
   font-size: 100%;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  height: 100vh;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--primary-red);
+  background-image: url('../images/bg-intro-mobile.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.content {
+  text-align: center;
+  /* border: 2px solid; */
+  padding: 100px 25px 50px;
+}
+
+.content h1 {
+  font-weight: 700;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.action {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.action__price {
+  background-color: var(--accent-blue);
+  padding: 20px 60px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.action__trial {
+  color: #fff;
+  font-weight: 600;
+}
+
+.action__footer {
+  color: var(--neutral-grayish-blue);
+  font-size: 10px;
+  text-align: center;
+}
+
+.action__terms {
+  color: var(--primary-red);
+}
+
+form {
+  border:2px solid;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  border: 2px solid hsl(0, 0%, 92%);
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+form input::placeholder {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.action .btn {
+  width: 100%;
+  color: #fff;
+  background-color: var(--primary-green);
+  border: none;
+  border-radius: 5px;
+  padding: 15px 0 15px;
 }

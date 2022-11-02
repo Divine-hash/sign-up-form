@@ -20,17 +20,19 @@
 </head>
 <body>
   <main>
-    <header>
-      <h1>Learn to code by watching</h1>
-    </header>
+    <div class="content">
+      <div>
+        <h1>Learn to code by watching others</h1>
+    
+        <p>
+          See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+          but understanding how developers think is invaluable. 
+        </p>
+      </div>
+    </div>
 
-    <p>
-      See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-      but understanding how developers think is invaluable. 
-    </p>
-
-    <div>
-      <p>Try it free 7 days then $20/mo. thereafter</p>
+    <div class="action">
+      <p class="action__price"><span class="action__trial">Try it free 7 days</span> then $20/mo. thereafter</p>
 
       <form action="./" method="post">
         <div>
@@ -42,7 +44,7 @@
         </div>
 
         <div>
-          <input type="email" name="email" placeholder="First Name">
+          <input type="email" name="email" placeholder="Email Address">
         </div>
 
         <div>
@@ -50,11 +52,11 @@
         </div>
 
        <div>
-        <button type="submit">Claim your free trial</button>
+        <button class="btn" type="submit">Claim your free trial</button>
        </div>
   
-        <P>
-          By clicking the button, you are agreeing to our Terms and Services
+        <P class="action__footer">
+          By clicking the button, you are agreeing to our <span class="action__terms">Terms and Services</span>
         </P>
       </form>
     </div>
