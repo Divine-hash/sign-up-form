@@ -69,7 +69,7 @@ p {
 
 /* Intro Content */
 .content {
-  padding: 30px 20px 50px;
+  padding: 30px 8px 50px;
 }
 
 
@@ -77,7 +77,7 @@ p {
 
 /* form section */
 .action__price {
-  padding: 20px 80px;
+  padding: 20px 60px;
   background-color: var(--accent-blue);
   border-radius: 8px;
   margin-bottom: 20px;
