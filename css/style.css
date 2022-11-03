@@ -6,6 +6,10 @@
   --neutral-grayish-blue: hsl(246, 25%, 77%);
 }
 
+
+
+
+/* Reset */
 *, 
 *::before,
 *::after {
@@ -21,9 +25,12 @@ input {
   font-size: 100%;
 }
 
+
+
+
+/* custom styles */
 body {
   font-family: Poppins, sans-serif;
-  font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
   height: 100vh;
@@ -36,76 +43,92 @@ body {
   background-size: contain;
 }
 
-.content {
-  text-align: center;
-  /* border: 2px solid; */
-  padding: 100px 25px 50px;
+.container {
+  width: 90%;
+  margin: 60px auto;
 }
 
-.content h1 {
+
+
+
+/* Typography */
+h1 {
+  color: #fff;
+  font-size: 1.75rem; /* 28px */
   font-weight: 700;
-  font-size: 28px;
-  color: #fff;
-  line-height: 1.3;
-  margin-bottom: 25px;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
-.action {
-  padding-left: 20px;
-  padding-right: 20px;
+h1, 
+p {
+  text-align: center;
 }
 
+
+
+/* Intro Content */
+.content {
+  padding: 30px 20px 50px;
+}
+
+
+
+
+/* form section */
 .action__price {
+  padding: 20px 80px;
   background-color: var(--accent-blue);
-  padding: 20px 60px;
-  text-align: center;
   border-radius: 8px;
-  margin-bottom: 15px;
-  font-weight: 500;
+  margin-bottom: 20px;
 }
 
-.action__trial {
+.action__price span {
   color: #fff;
-  font-weight: 600;
 }
 
-.action__footer {
-  color: var(--neutral-grayish-blue);
-  font-size: 10px;
-  text-align: center;
-}
-
-.action__terms {
-  color: var(--primary-red);
-}
-
-form {
-  border:2px solid;
-  background-color: #fff;
-  padding: 20px;
+.action__form {
+  border: 2px solid;
   border-radius: 8px;
+  background: #fff;
+  padding: 20px;
 }
 
-form input {
+.action__form div:not(:nth-child(5)) {
+  margin-bottom: 15px;
+}
+
+.action__form input {
   display: block;
   width: 100%;
-  padding: 12px;
+  padding: 15px;
   outline: none;
-  border: 2px solid hsl(0, 0%, 92%);
+  border: 2px solid hsl(0, 5%, 92%);
   border-radius: 5px;
-  margin-bottom: 15px;
 }
 
-form input::placeholder {
-  font-weight: 600;
-  font-size: 15px;
+.action__form input::placeholder {
+  font-weight: 700;
 }
 
-.action .btn {
+.action__form button {
+  display: block;
   width: 100%;
   color: #fff;
   background-color: var(--primary-green);
   border: none;
   border-radius: 5px;
-  padding: 15px 0 15px;
+  text-transform: uppercase;
+  padding: 20px;
+  box-shadow: 0 3px 2px hsl(120, 96%, 33%);
+}
+
+.action__terms {
+  color: var(--neutral-grayish-blue);
+  font-size: 0.75rem;   /* 12px */
+  padding: 20px;
+}
+
+.action__terms span {
+  color: var(--primary-red);
 }
