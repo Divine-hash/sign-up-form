@@ -33,7 +33,7 @@ body {
   font-family: Poppins, sans-serif;
   font-weight: 600;
   line-height: 1.5;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   color: rgba(255, 255, 255, 0.8);
   background-color: var(--primary-red);
@@ -45,7 +45,7 @@ body {
 
 .container {
   width: 90%;
-  margin: 60px auto;
+  margin: 60px auto 0;
 }
 
 
@@ -92,6 +92,7 @@ p {
   border-radius: 8px;
   background: #fff;
   padding: 20px;
+  padding-bottom: 0;
 }
 
 .action__form div:not(:nth-child(5)) {
@@ -126,9 +127,62 @@ p {
 .action__terms {
   color: var(--neutral-grayish-blue);
   font-size: 0.75rem;   /* 12px */
-  padding: 20px;
+  padding: 15px;
 }
 
 .action__terms span {
   color: var(--primary-red);
+}
+
+
+@media screen and (min-width: 600px) {
+  h1,
+  p {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  body {
+    background-image: url("../images/bg-intro-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    align-items: center;
+  }
+
+  .container {
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+    justify-content: space-around;
+  }
+
+  .content {
+    align-self: center;
+    padding: 0;
+  }
+
+  .action__price {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .action__form button {
+    padding: 10px;
+  }
+
+  .action__terms {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+
+@media screen and (min-width: 960px) {
+  .container {
+    grid-template: 1fr / 500px 450px;
+  }
 }
