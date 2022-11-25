@@ -95,8 +95,14 @@ p {
   padding-bottom: 0;
 }
 
+.widget img,
+.widget p {
+  display: none;
+}
+
 .action__form div:not(:nth-child(5)) {
   margin-bottom: 15px;
+  position: relative;
 }
 
 .action__form input {
@@ -133,6 +139,33 @@ p {
 .action__terms span {
   color: var(--primary-red);
 }
+
+
+
+
+
+/* active states */
+.invalid p {
+  display: block;
+  color: var(--primary-red);
+  font-size: 12px;
+  text-align: right;
+  font-style: italic;
+}
+
+.invalid img{
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 18px;
+}
+
+.invalid input {
+  border: 2px solid var(--primary-red);
+}
+
+
+
 
 
 @media screen and (min-width: 600px) {
