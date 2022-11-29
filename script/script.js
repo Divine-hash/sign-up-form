@@ -2,10 +2,8 @@ class ValidateForm {
   constructor(form) {
     this.form = form;
     this.onSubmit = this.onSubmit.bind(this);
-    this.onFocus = this.onFocus.bind(this);
 
     form.addEventListener('submit', this.onSubmit);
-    form.addEventListener('focus', this.onFocus, true);
   }
 
   onSubmit(event) {
@@ -15,18 +13,7 @@ class ValidateForm {
       event.preventDefault();
     }
   }
-
-  onFocus(event) {
-    let target = event.target;
-
-    if (target.tagName == 'INPUT') {
-      let div = target.closest('div');
-      if (div.classList.contains('invalid')) {
-        div.classList.remove('invalid');
-      }
-    }
-  }
-
+  
   validateInputs(elements) {
     const email = /^[a-z\d-\.]+@[a-z\d-]+(\.[a-z]+){1,2}$/;
     let isValid = true;
@@ -34,6 +21,7 @@ class ValidateForm {
     for (let input of elements) {
       if (input.value == '' && input.tagName !== 'BUTTON') {
         input.closest('div').classList.add('invalid');
+        input.placeholder = "";
         isValid = false;
       }
 
@@ -42,6 +30,7 @@ class ValidateForm {
         isValid = email.test(value);
         if (!isValid) {
           input.closest('div').classList.add('invalid');
+          input.placeholder = "email@example/com";
         }
       }
     }

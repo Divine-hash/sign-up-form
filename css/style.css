@@ -69,7 +69,7 @@ p {
 
 /* Intro Content */
 .content {
-  padding: 30px 2px 50px;
+  padding: 30px 0 50px;
 }
 
 
@@ -109,9 +109,12 @@ p {
   display: block;
   width: 100%;
   padding: 15px;
-  outline: none;
   border: 2px solid hsl(0, 5%, 92%);
   border-radius: 5px;
+}
+
+.action__form input:focus {
+  outline: 1px solid var(--neutral-dark-blue);
 }
 
 .action__form input::placeholder {
@@ -148,7 +151,7 @@ p {
 .invalid p {
   display: block;
   color: var(--primary-red);
-  font-size: 12px;
+  font-size: 0.75rem;
   text-align: right;
   font-style: italic;
 }
@@ -157,66 +160,70 @@ p {
   display: block;
   position: absolute;
   right: 20px;
-  top: 18px;
+  top: 13px;
 }
 
 .invalid input {
   border: 2px solid var(--primary-red);
+  padding: 10px;
+}
+
+.invalid input:focus {
+  outline: none;
+}
+
+.invalid input::placeholder {
+  color: var(--primary-red);
+  font-size: 0.75rem;
 }
 
 
 
 
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 2.5rem;
+  }
 
-@media screen and (min-width: 600px) {
   h1,
   p {
     text-align: left;
   }
 
-  h1 {
-    font-size: 32px;
-  }
-
   body {
-    font-size: 1rem;
-    background-image: url("../images/bg-intro-desktop.png");
+    background-image: url('../images/bg-intro-desktop.png');
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
-    display: grid;
-    align-items: center;
+    background-size: contain;
   }
 
   .container {
+    width: 80%;
     display: grid;
     grid-template: 1fr / repeat(2, 1fr);
-    justify-content: space-around;
+    gap: 15px;
   }
 
   .content {
+    width: 550px;
     align-self: center;
-    padding: 0;
+  }
+
+  .action {
+    width: 450px;
+    justify-self: end;
   }
 
   .action__price {
-    padding: 15px;
     text-align: center;
   }
 
   .action__form button {
-    padding: 10px;
+    padding: 15px;
   }
 
-  .action__terms {
-    padding: 10px 0;
+  .action__form > p {
     text-align: center;
   }
 }
 
-
-@media screen and (min-width: 960px) {
-  .container {
-    grid-template: 1fr / 500px 450px;
-  }
-}
