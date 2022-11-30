@@ -108,7 +108,7 @@ p {
 .action__form input {
   display: block;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   border: 2px solid hsl(0, 5%, 92%);
   border-radius: 5px;
 }
@@ -129,7 +129,7 @@ p {
   border: none;
   border-radius: 5px;
   text-transform: uppercase;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 3px 2px hsl(120, 96%, 33%);
 }
 
@@ -170,6 +170,7 @@ p {
 
 .invalid input:focus {
   outline: none;
+  box-shadow: 0 0 4px 2px var(--primary-red);
 }
 
 .invalid input::placeholder {
@@ -177,6 +178,15 @@ p {
   font-size: 0.75rem;
 }
 
+
+.valid input {
+  border: 2px solid var(--primary-green);
+}
+
+.valid input:focus {
+  outline: none;
+  box-shadow: 0 0 4px 2px var(--primary-green);
+}
 
 
 

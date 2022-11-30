@@ -2,8 +2,12 @@ class ValidateForm {
   constructor(form) {
     this.form = form;
     this.onSubmit = this.onSubmit.bind(this);
+    this.onInput = this.onInput.bind(this);
+    this.onFocusout = this.onFocusout.bind(this);
 
     form.addEventListener('submit', this.onSubmit);
+    form.addEventListener('input', this.onInput);
+    form.addEventListener('focusout', this.onFocusout)
   }
 
   onSubmit(event) {
@@ -11,31 +15,53 @@ class ValidateForm {
 
     if (!result) {
       event.preventDefault();
+      return;
     }
   }
   
+  onInput(event) {
+    let target = event.target;
+    let div = target.closest('div');
+    let isInvalid = div.classList.contains('invalid');
+    if (isInvalid) {
+      div.classList.remove('invalid');
+      div.classList.add('valid');
+    }
+  }
+
+  onFocusout(event) {
+    let target = event.target;
+    if (!event.target.value) {
+      target.closest('div').classList.remove('valid');
+      target.closest('div').classList.add('invalid');
+    }
+  }
+
   validateInputs(elements) {
     const email = /^[a-z\d-\.]+@[a-z\d-]+(\.[a-z]+){1,2}$/;
-    let isValid = true;
+    const set = new Set();
+    set.add(true);
 
     for (let input of elements) {
+      let div = input.closest('div');
       if (input.value == '' && input.tagName !== 'BUTTON') {
-        input.closest('div').classList.add('invalid');
+        div.classList.add('invalid');
         input.placeholder = "";
-        isValid = false;
+        set.add(false);
       }
 
       if (input.name == 'email') {
         let value = input.value;
-        isValid = email.test(value);
-        if (!isValid) {
-          input.closest('div').classList.add('invalid');
+        
+        if ( !email.test(value) ) {
+          set.add(false);
+          div.classList.add('invalid');
           input.placeholder = "email@example/com";
         }
       }
     }
 
-    return isValid;
+    return !set.has(false);
   }
 }
 
