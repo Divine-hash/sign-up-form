@@ -180,6 +180,7 @@ body {
 
 .invalid input:focus {
   outline: none;
+  border: 2px solid var(--primary-red);
   box-shadow: 0 0 4px 2px var(--primary-red);
 }
 
@@ -202,6 +203,7 @@ body {
 
 .valid input:focus {
   outline: none;
+  border: 2px solid var(--primary-green);
   box-shadow: 0 0 4px 2px var(--primary-green);
 }
 
