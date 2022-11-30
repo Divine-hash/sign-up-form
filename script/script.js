@@ -64,6 +64,10 @@ class ValidateForm {
           set.add(false);
           div.classList.add('invalid');
           input.placeholder = "email@example/com";
+          
+          if (div.classList.contains('valid')) {
+            div.classList.remove('valid');
+          }
         }
       }
     }
