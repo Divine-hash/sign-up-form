@@ -3,40 +3,47 @@ class ValidateForm {
     this.form = form;
     this.onSubmit = this.onSubmit.bind(this);
     this.onInput = this.onInput.bind(this);
-    this.onFocusout = this.onFocusout.bind(this);
 
     form.addEventListener('submit', this.onSubmit);
     form.addEventListener('input', this.onInput);
-    form.addEventListener('focusout', this.onFocusout)
   }
 
   onSubmit(event) {
-    let result = this.validateInputs(this.form.elements);
+    const result = this.validateInputs(this.form.elements);
 
     if (!result) {
       event.preventDefault();
       return;
     }
+
+    if (result) {
+      for (let elem of this.form.elements) {
+        elem.value = "";
+        elem.placeholder = elem.dataset.placeholder;
+        elem.closest('div').className = 'widget';
+      }
+    }
+    event.preventDefault();
   }
   
   onInput(event) {
-    let target = event.target;
-    let div = target.closest('div');
-    let isInvalid = div.classList.contains('invalid');
-    if (isInvalid) {
-      div.classList.remove('invalid');
-      div.classList.add('valid');
-    }
+   const target = event.target;
+   const div = target.closest('div');
+
+   if (div.className == 'widget') return;
+
+   if (!target.value) {
+    div.classList.add('invalid');
+    div.classList.remove('valid');
+   }
+
+   if (target.value) {
+    div.classList.add('valid');
+    div.classList.remove('invalid');
+   } 
   }
 
-  onFocusout(event) {
-    let target = event.target;
-    if (!event.target.value) {
-      target.closest('div').classList.remove('valid');
-      target.closest('div').classList.add('invalid');
-    }
-  }
-
+  
   validateInputs(elements) {
     const email = /^[a-z\d-\.]+@[a-z\d-]+(\.[a-z]+){1,2}$/;
     const set = new Set();
